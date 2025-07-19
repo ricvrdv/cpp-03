@@ -15,7 +15,7 @@ ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPoints(10), _energyPoi
 // Copy constructor
 ClapTrap::ClapTrap( ClapTrap const &other )
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "ClapTrap copy constructor called" << std::endl;
     *this = other;
 }
 
@@ -29,6 +29,7 @@ ClapTrap&   ClapTrap::operator=( ClapTrap const &other )
 		this->_energyPoints = other._energyPoints;
 		this->_attackDamage = other._attackDamage;
 	}
+	std::cout << "ClapTrap copy assignment operator called" << std::endl;
 	return (*this);
 }
 
@@ -55,10 +56,10 @@ void    ClapTrap::attack( const std::string& target )
 void    ClapTrap::takeDamage( unsigned int amount )
 {
 	if (this->_hitPoints == 0)
-		std::cout << "ClapTrap " << this->_name << " cannot take any more damage. It's already dead!" << std::endl;
+		std::cout << this->_name << " cannot take any more damage. It's already dead!" << std::endl;
 	else
 	{
-		std::cout << "ClapTrap " << this->_name << " takes " << amount << " points of damage!" << std::endl;
+		std::cout << this->_name << " takes " << amount << " points of damage!" << std::endl;
 		if (amount >= this->_hitPoints)
 			this->_hitPoints = 0;
 		else
@@ -69,12 +70,12 @@ void    ClapTrap::takeDamage( unsigned int amount )
 void    ClapTrap::beRepaired( unsigned int amount )
 {
 	if (this->_hitPoints == 0)
-		std::cout << "ClapTrap " << this->_name << " cannot repair. It's dead!" << std::endl;
+		std::cout << this->_name << " cannot repair. It's dead!" << std::endl;
 	else if (this->_energyPoints == 0)
-		std::cout << "ClapTrap " << this->_name << " cannot repair. No Energy Points left!" << std::endl;
+		std::cout << this->_name << " cannot repair. No Energy Points left!" << std::endl;
 	else
 	{
-		std::cout << "ClapTrap " << this->_name << " repairs itself, regaining " << amount << " Hit Points!" << std::endl;
+		std::cout << this->_name << " repairs itself, regaining " << amount << " Hit Points!" << std::endl;
 		this->_hitPoints += amount;
 		this->_energyPoints--;
 	}

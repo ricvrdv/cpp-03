@@ -6,7 +6,7 @@
 #    By: applecore <applecore@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/10 13:13:47 by rjesus-d          #+#    #+#              #
-#    Updated: 2025/07/15 17:46:07 by applecore        ###   ########.fr        #
+#    Updated: 2025/07/19 11:30:01 by applecore        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ RM = rm -rf
 # SOURCE FILES                                                                 #
 #==============================================================================#
 
-SRCS = main.cpp ClapTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
