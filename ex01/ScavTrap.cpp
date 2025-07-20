@@ -49,12 +49,12 @@ ScavTrap::~ScavTrap( void )
 void	ScavTrap::attack( const std::string &target )
 {
 	if (this->_hitPoints == 0)
-		std::cout << "ScavTrap " << this->_name << " cannot attack. It's dead!" << std::endl;
+		std::cout << "ScavTrap " << this->_name << " cannot strike. It's dead!" << std::endl;
 	else if (this->_energyPoints == 0)
-		std::cout << "ScavTrap " << this->_name << " cannot attack. No Energy Points left!" << std::endl;
+		std::cout << "ScavTrap " << this->_name << " cannot strike. No Energy Points left!" << std::endl;
 	else
     {
-		std::cout << "ScavTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
+		std::cout << "ScavTrap " << this->_name << " strikes " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
 		this->_energyPoints--;
 	}
 }
