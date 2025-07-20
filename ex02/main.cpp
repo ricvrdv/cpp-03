@@ -30,11 +30,13 @@ int	main()
 		std::cout << std::endl << "[ FRAGTRAP ]" << std::endl;
 		FragTrap	robotE;
 		FragTrap	robotF("FRAG-01");
+		FragTrap	robotG(robotF);
 
 		robotF.attack("BRAT-00");
 		robotF.takeDamage(50);
 		robotF.beRepaired(20);
 		robotF.highFivesGuys();
+		robotG.attack("BRAT-01");
 	}
 	return (0);
 }
