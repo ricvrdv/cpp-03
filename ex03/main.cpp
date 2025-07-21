@@ -14,5 +14,11 @@
 
 int	main()
 {
+	DiamondTrap diamond("DIAMOND");
+    diamond.whoAmI();
+    diamond.attack("target");
+    diamond.guardGate();
+    diamond.highFivesGuys();
+
 	return (0);
 }

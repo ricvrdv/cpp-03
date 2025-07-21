@@ -13,7 +13,7 @@
 #include "FragTrap.hpp"
 
 // Default constructor
-FragTrap::FragTrap( void ) : ClapTrap("FRAG-00")
+FragTrap::FragTrap( void )
 {
     this->_hitPoints = 100;
     this->_energyPoints = 100;
@@ -22,12 +22,12 @@ FragTrap::FragTrap( void ) : ClapTrap("FRAG-00")
 }
 
 // Parametric constructor
-FragTrap::FragTrap( std::string name ) : ClapTrap(name)
+FragTrap::FragTrap( std::string name ) 
 {
     this->_hitPoints = 100;
     this->_energyPoints = 100;
     this->_attackDamage = 30;
-    std::cout << "Constructor called. FragTrap " << this->_name << " was created." << std::endl;
+    std::cout << "Constructor called. FragTrap " << name << " was created." << std::endl;
 }
 
 // Copy constructor

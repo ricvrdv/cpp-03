@@ -13,7 +13,7 @@
 #include "ScavTrap.hpp"
 
 // Default constructor
-ScavTrap::ScavTrap( void ) : ClapTrap("SCAV-00")
+ScavTrap::ScavTrap( void )
 {
     this->_hitPoints = 100;
     this->_energyPoints = 50;
@@ -22,12 +22,12 @@ ScavTrap::ScavTrap( void ) : ClapTrap("SCAV-00")
 }
 
 // Parametric constructor
-ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
+ScavTrap::ScavTrap( std::string name ) 
 {
     this->_hitPoints = 100;
     this->_energyPoints = 50;
     this->_attackDamage = 20;
-    std::cout << "Constructor called. ScavTrap " << this->_name << " was created." << std::endl;
+    std::cout << "Constructor called. ScavTrap " << name << " was created." << std::endl;
 }
 
 // Copy constructor
