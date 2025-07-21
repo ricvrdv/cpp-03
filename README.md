@@ -1,2 +1,3 @@
 # C++ Module 03
-Concepts:
+# Concepts:
+- Inheritance between classes
