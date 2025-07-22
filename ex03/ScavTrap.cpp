@@ -12,42 +12,40 @@
 
 #include "ScavTrap.hpp"
 
+unsigned int const	ScavTrap::defaultHitPoints = 100;
+unsigned int const	ScavTrap::defaultEnergyPoints = 50;
+unsigned int const	ScavTrap::defaultAttackDamage = 20;
+
 // Default constructor
-ScavTrap::ScavTrap( void )
+ScavTrap::ScavTrap( void ) : ClapTrap("SCAV-00")
 {
-    this->_hitPoints = 100;
-    this->_energyPoints = 50;
-    this->_attackDamage = 20;
+    this->_hitPoints = ScavTrap::defaultHitPoints;
+    this->_energyPoints = ScavTrap::defaultEnergyPoints;
+    this->_attackDamage = ScavTrap::defaultAttackDamage;
     std::cout << "Default constructor called. ScavTrap " << this->_name << " was created." << std::endl;
 }
 
 // Parametric constructor
-ScavTrap::ScavTrap( std::string name ) 
+ScavTrap::ScavTrap( std::string const &name ) : ClapTrap(name)
 {
-    this->_hitPoints = 100;
-    this->_energyPoints = 50;
-    this->_attackDamage = 20;
-    std::cout << "Constructor called. ScavTrap " << name << " was created." << std::endl;
+    this->_hitPoints = ScavTrap::defaultHitPoints;
+    this->_energyPoints = ScavTrap::defaultEnergyPoints;
+    this->_attackDamage = ScavTrap::defaultAttackDamage;
+    std::cout << "Parametric constructor called. ScavTrap " << this->_name << " was created." << std::endl;
 }
 
 // Copy constructor
 ScavTrap::ScavTrap( ScavTrap const &other) : ClapTrap(other)
 {
-    std::cout << "ScavTrap copy constructor called" << std::endl;
-    *this = other;
+    std::cout << "ScavTrap copy constructor called." << std::endl;
 }
 
 // Copy assignment operator
 ScavTrap&	ScavTrap::operator=( ScavTrap const &other)
 {
 	if (this != &other)
-	{
-		this->_name = other._name;
-		this->_hitPoints = other._hitPoints;
-		this->_energyPoints = other._energyPoints;
-		this->_attackDamage = other._attackDamage;
-	}
-	std::cout << "ScavTrap copy assignment operator called" << std::endl;
+		ClapTrap::operator=(other);
+	std::cout << "ScavTrap copy assignment operator called." << std::endl;
 	return (*this);
 }
 
@@ -73,7 +71,7 @@ void	ScavTrap::attack( const std::string &target )
 
 void	ScavTrap::guardGate( void )
 {
-	if (_hitPoints == 0)
+	if (this->_hitPoints == 0)
 		std::cout << "ScavTrap " << this->_name << " cannot guard the gate. It's dead!" << std::endl;
 	else
 		std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode!" << std::endl;

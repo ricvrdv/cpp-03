@@ -20,13 +20,16 @@ class	FragTrap : virtual public ClapTrap
 	public:
 
         FragTrap( void );
-        FragTrap( std::string name );
+        FragTrap( std::string const &name );
         FragTrap( FragTrap const &other );
         FragTrap&   operator=( FragTrap const &other );
         ~FragTrap( void );
 
-        void    attack( const std::string &target );
         void    highFivesGuys( void );
+
+		static unsigned int const       defaultHitPoints;
+        static unsigned int const       defaultEnergyPoints;
+        static unsigned int const       defaultAttackDamage;
 };
 
 #endif

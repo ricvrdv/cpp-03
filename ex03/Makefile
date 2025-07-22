@@ -6,7 +6,7 @@
 #    By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/21 13:55:51 by rjesus-d          #+#    #+#              #
-#    Updated: 2025/07/21 13:55:53 by rjesus-d         ###   ########.fr        #
+#    Updated: 2025/07/22 18:42:45 by rjesus-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME = diamondtrap
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g -Wshadow
 
 RM = rm -rf
 
