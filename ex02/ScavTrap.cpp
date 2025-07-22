@@ -22,7 +22,7 @@ ScavTrap::ScavTrap( void ) : ClapTrap("SCAV-00")
 }
 
 // Parametric constructor
-ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
+ScavTrap::ScavTrap( std::string const &name ) : ClapTrap(name)
 {
     this->_hitPoints = 100;
     this->_energyPoints = 50;
@@ -33,21 +33,15 @@ ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
 // Copy constructor
 ScavTrap::ScavTrap( ScavTrap const &other) : ClapTrap(other)
 {
-    std::cout << "ScavTrap copy constructor called" << std::endl;
-    *this = other;
+    std::cout << "ScavTrap copy constructor called." << std::endl;
 }
 
 // Copy assignment operator
 ScavTrap&	ScavTrap::operator=( ScavTrap const &other)
 {
 	if (this != &other)
-	{
-		this->_name = other._name;
-		this->_hitPoints = other._hitPoints;
-		this->_energyPoints = other._energyPoints;
-		this->_attackDamage = other._attackDamage;
-	}
-	std::cout << "ScavTrap copy assignment operator called" << std::endl;
+		ClapTrap::operator=(other);
+	std::cout << "ScavTrap copy assignment operator called." << std::endl;
 	return (*this);
 }
 
@@ -73,7 +67,7 @@ void	ScavTrap::attack( const std::string &target )
 
 void	ScavTrap::guardGate( void )
 {
-	if (_hitPoints == 0)
+	if (this->_hitPoints == 0)
 		std::cout << "ScavTrap " << this->_name << " cannot guard the gate. It's dead!" << std::endl;
 	else
 		std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode!" << std::endl;
