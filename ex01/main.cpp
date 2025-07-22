@@ -15,28 +15,44 @@
 int	main()
 {
     {
-        std::cout << std::endl << "[ CLAPTRAP ]" << std::endl;
-		ClapTrap	robotA;
-        ClapTrap	robotB("CLAP-01");
+		std::cout << std::endl << "[ CLAPTRAP ]" << std::endl;
+		ClapTrap    robotA;
+   		ClapTrap    robotB("HELLRAISER");
+    	ClapTrap    robotC(robotA);
+    	ClapTrap    robotD;
 
-		robotA.attack("N3M3S1S-01");
-		robotB.attack("N3M3S1S-02");
-		robotB.takeDamage(10);
-		robotB.beRepaired(5);
+    	robotD = robotB;
 
-    }
-    {
-		std::cout << std::endl << "[ SCAVTRAP ]" << std::endl;
-		ScavTrap	robotC;
-		ScavTrap	robotD("SCAV-01");
+    	std::cout << std::endl << robotB.getName() << " starts with " << robotB.getHitPoints() << " HP and " << robotB.getEnergyPoints() << " EP." << std::endl;
+    	robotB.attack("JINZO");
+    	robotB.takeDamage(5);
+    	std::cout << robotB.getName() << " has now " << robotB.getHitPoints() << " HP and " << robotB.getEnergyPoints() << " EP." << std::endl;
+    	robotB.beRepaired(5);
+    	std::cout << robotB.getName() << " has now " << robotB.getHitPoints() << " HP and " << robotB.getEnergyPoints() << " EP." << std::endl << std::endl;
+    	std::cout << std::endl;
+	}
+	{
+		std::cout << std::endl << "[ Press ENTER to continue to SCAVTRAP test... ]" << std::endl;
+		std::cin.get();
 
-		robotC = robotD;
-		robotD.attack("D3V1L-00");
-		robotC.attack("D3V1L-01");
-		robotD.guardGate();
-		robotD.takeDamage(100);
-		robotD.guardGate();
+		std::cout << "[ SCAVTRAP ]" << std::endl;
+		ScavTrap	robotA;
+		ScavTrap	robotB("MEGATRON");
+		ScavTrap	robotC(robotA);
+		ScavTrap	robotD;
+
+		robotD = robotB;
+
+		std::cout << std::endl << robotB.getName() << " starts with " << robotB.getHitPoints() << " HP and " << robotB.getEnergyPoints() << " EP." << std::endl;
+		robotB.attack("NEMESIS");
+		robotB.takeDamage(70);
+		std::cout << robotB.getName() << " has now " << robotB.getHitPoints() << " HP and " << robotB.getEnergyPoints() << " EP." << std::endl;
+		robotB.beRepaired(40);
+		std::cout << robotB.getName() << " has now " << robotB.getHitPoints() << " HP and " << robotB.getEnergyPoints() << " EP." << std::endl;
 		robotC.guardGate();
-    }
+		robotC.takeDamage(100);
+		robotC.guardGate();
+		std::cout << std::endl;
+	}
 	return (0);
 }

@@ -29,7 +29,7 @@ ClapTrap::ClapTrap( std::string name )
 	_energyPoints(10),
 	_attackDamage(0)
 {
-    std::cout << "Constructor called. ClapTrap " << this->_name << " was created." << std::endl;
+    std::cout << "Parametric constructor called. ClapTrap " << this->_name << " was created." << std::endl;
 }
 
 // Copy constructor
