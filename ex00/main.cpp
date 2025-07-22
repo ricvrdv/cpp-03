@@ -14,21 +14,25 @@
 
 int	main( void )
 {
-    {
-        ClapTrap a;
+    ClapTrap    robotA;
+    ClapTrap    robotB("HELLRAISER");
+    ClapTrap    robotC(robotA);
+    ClapTrap    robotD;
 
-        a.attack("PILAF");
-        a.takeDamage(4);
-        a.beRepaired(1);
-        a.takeDamage(10);
-        a.beRepaired(2);
-    }
-    {
-        ClapTrap b ("JINZO");
+    robotD = robotB;
 
-        b.attack("AEON");
-        b.takeDamage(10);
-        b.beRepaired(3);
-        b.attack("AEON");
-    }
+    std::cout << std::endl << robotB.getName() << " starts with " << robotB.getHitPoints() << " HP and " << robotB.getEnergyPoints() << " EP." << std::endl;
+    robotB.attack("JINZO");
+    robotB.takeDamage(5);
+    std::cout << robotB.getName() << " has now " << robotB.getHitPoints() << " HP and " << robotB.getEnergyPoints() << " EP." << std::endl;
+    robotB.beRepaired(5);
+    std::cout << robotB.getName() << " has now " << robotB.getHitPoints() << " HP and " << robotB.getEnergyPoints() << " EP." << std::endl << std::endl;
+
+    std::cout << robotC.getName() << " starts with " << robotC.getHitPoints() << " HP and " << robotC.getEnergyPoints() << " EP." << std::endl;
+    robotC.takeDamage(10);
+    std::cout << robotC.getName() << " has now " << robotC.getHitPoints() << " HP and " << robotC.getEnergyPoints() << " EP." << std::endl;
+    robotC.attack("JINZO");
+    std::cout << std::endl;
+
+    return (0);
 }

@@ -13,13 +13,21 @@
 #include "ClapTrap.hpp"
 
 // Default constructor
-ClapTrap::ClapTrap( void ) : _name("PROTO-00"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap( void )
+	: _name("PROTO-00"),
+	_hitPoints(10), 
+	_energyPoints(10), 
+	_attackDamage(0)
 {
-	std::cout << "Default Constructor called. ClapTrap " << this->_name << " was created." << std::endl;
+	std::cout << "Default constructor called. ClapTrap " << this->_name << " was created." << std::endl;
 }
 
 // Parametric constructor
-ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap( std::string name )
+	: _name(name),
+	_hitPoints(10),
+	_energyPoints(10),
+	_attackDamage(0)
 {
     std::cout << "Constructor called. ClapTrap " << this->_name << " was created." << std::endl;
 }
@@ -27,7 +35,7 @@ ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPoints(10), _energyPoi
 // Copy constructor
 ClapTrap::ClapTrap( ClapTrap const &other )
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Copy constructor called." << std::endl;
     *this = other;
 }
 
@@ -41,6 +49,7 @@ ClapTrap&   ClapTrap::operator=( ClapTrap const &other )
 		this->_energyPoints = other._energyPoints;
 		this->_attackDamage = other._attackDamage;
 	}
+	std::cout << "Copy assignment operator called." << std::endl;
 	return (*this);
 }
 
@@ -90,4 +99,25 @@ void    ClapTrap::beRepaired( unsigned int amount )
 		this->_hitPoints += amount;
 		this->_energyPoints--;
 	}
+}
+
+// Getters
+std::string	ClapTrap::getName( void ) const
+{
+	return (this->_name);
+}
+
+unsigned int	ClapTrap::getHitPoints( void ) const
+{
+	return (this->_hitPoints);
+}
+
+unsigned int	ClapTrap::getEnergyPoints( void ) const
+{
+	return (this->_energyPoints);
+}
+
+unsigned int	ClapTrap::getAttackDamage( void ) const
+{
+	return (this->_attackDamage);
 }
