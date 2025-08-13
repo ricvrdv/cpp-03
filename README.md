@@ -1,6 +1,8 @@
 # C++ Module 03
 # Concepts:
 - Inheritance between classes
+- Multiple inheritance
+- Diamond problem
 
 ----
 ✅ Check out [C++ Module 04]()
